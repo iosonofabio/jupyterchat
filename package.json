@@ -16,7 +16,7 @@
   },
   "scripts": {
     "train": "node src/train.js",
-    "build": "npm run train && cp src/app.js build/index.js && node extract_utterances.js",
+    "build": "npm run train && cp src/app.js build/index.js && node extract_utterances.js && rm -rf src/python/static/jupyterchat && mkdir src/python/static/jupyterchat && cp build/*.js src/python/static/jupyterchat/",
     "testCorpus": "run(){ node test/testCorpus.js \"$1\" \"$2\"; }; run",
     "testNode": "npm uninstall atlasapprox-nlp && rm -f atlasapprox-nlp-*.tgz && npm run build && npm pack && npm install fabilab-atlasapprox-nlp-*.tgz && node test/testModule.js",
     "testWebpack": "npm run build && cp build/index.js test/atlasapprox-nlp.js && cp build/modelString.js test/ && npx webpack serve ./test/webpack.js --static ./test --open /webpack.html --mode development",

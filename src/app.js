@@ -96,6 +96,8 @@ define([
                 chatbot.initialise();
 
                 // TODO: pipe in the question
+                
+
                 let answer = chatbot.ask(question);
                 // TODO: pipeout the answer
             };
