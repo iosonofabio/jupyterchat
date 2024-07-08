@@ -5,7 +5,7 @@ import setuptools.command.build_py
 
 
 class BuildPyCommand(setuptools.command.build_py.build_py):
-  """Custom build command."""
+    """Custom build command."""
 
     def _run_npm_build(self):
         """Run npm copying the output to the python/src folder."""

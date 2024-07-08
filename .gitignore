@@ -1,3 +1,3 @@
 node_modules
 build
-src/python/static/jupyterchat/*
+src/python/static/jupyterchat/*.js
