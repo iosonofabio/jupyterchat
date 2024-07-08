@@ -19,5 +19,5 @@ def _jupyter_nbextension_paths():
         dest='jupyterchat',
         # require is also in the `nbextensions/` namespace
         # must use / as path.sep
-        require='jupyterchat/index',
+        require='jupyterchat/main',
     )]
