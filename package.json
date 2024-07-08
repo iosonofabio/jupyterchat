@@ -1,0 +1,38 @@
+{
+  "name": "@fabilab/jupyterchat",
+  "version": "0.1.0",
+  "author": "Fabio Zanini",
+  "license": "MIT",
+  "main": "build/index.js",
+  "files": [
+    "build/modelString.js",
+    "build/index.js",
+    "build/utterances.js",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iosonofabio/jupyterchat.git"
+  },
+  "scripts": {
+    "train": "node src/train.js",
+    "build": "npm run train && cp src/app.js build/index.js && node extract_utterances.js",
+    "testCorpus": "run(){ node test/testCorpus.js \"$1\" \"$2\"; }; run",
+    "testNode": "npm uninstall atlasapprox-nlp && rm -f atlasapprox-nlp-*.tgz && npm run build && npm pack && npm install fabilab-atlasapprox-nlp-*.tgz && node test/testModule.js",
+    "testWebpack": "npm run build && cp build/index.js test/atlasapprox-nlp.js && cp build/modelString.js test/ && npx webpack serve ./test/webpack.js --static ./test --open /webpack.html --mode development",
+    "test": "npm run testNode && npm run testWebpack",
+    "deploy": "npm run build && sed -i 's/debug = true/debug = false/' build/index.js && npm publish --access public"
+  },
+  "devDependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "@nlpjs/basic": "^4.27.0",
+    "@nlpjs/core": "^4.26.1",
+    "@nlpjs/lang-en-min": "^4.26.1",
+    "@nlpjs/nlp": "^4.27.0",
+    "@nlpjs/request-rn": "^4.25.0"
+  }
+}

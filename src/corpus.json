@@ -1,0 +1,27 @@
+{
+  "name": "Corpus for jupyterchat",
+  "locale": "en-US",
+  "data": [
+    {
+      "intent": "who",
+      "utterances": [
+        "hello",
+        "hello there!",
+        "good morning",
+        "good day",
+        "g'day",
+        "hi",
+        "hey",
+        "what can you do?",
+        "who are you?",
+        "what are you?"
+      ],
+      "answers": [
+        "Hello! I'm a simple chatbot for Jupyter. Type \"help\" to get started."
+      ]
+    }
+  ],
+
+  "entities": {
+  }
+}
