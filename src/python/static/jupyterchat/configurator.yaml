@@ -1,0 +1,10 @@
+Type: Jupyter Notebook Extension
+Compatibility: 4.x, 5.x
+Name: Simple Jupyter Chatbot
+Main: main.js
+Description: A simple chatbot for Python beginners.
+Link: README.md
+tags:
+- nlp
+- chatbot
+- help
