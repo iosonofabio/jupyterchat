@@ -1,3 +1,5 @@
 node_modules
 build
 src/python/static/jupyterchat/*.js
+dist
+src/python/jupyterchat.egg-info/
